@@ -2,6 +2,13 @@
  transition: .4s ease-out;
 }
 
+@mixin hidden($strings) {
+  display: -webkit-box;
+  -webkit-line-clamp: $strings;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
+}
+
 .book {
   width: 180px;
   margin: 20px 15px;
@@ -21,17 +28,23 @@
     padding: 15px 15px;
     &__title {
       @extend %transition;
+      @include hidden(3);
       font: bold 16px sans-serif;
       color: #0065d9;
     }
-    &__author {
+    &-authors {
+      @include hidden(2);
+      margin-top: 5px;
       font: normal 14px sans-serif;
-      color: rgba(0,0,0,.56)
+      color: rgba(0,0,0,.56);
+      &__name:not(:nth-child(1)):before {
+        content: ', ';
+      }
     }
   
   }
   &__cover {
-    text-align: center;
     width: 100%;
+    text-align: center;
   }
 }
