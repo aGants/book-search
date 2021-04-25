@@ -13,7 +13,7 @@ const Main = () => {
   }, [])
 
   return(
-    <div>
+    <div className="main">
       {book.map((book,index) => 
         <Book key={index} book={book} />
         )}

@@ -1,8 +1,6 @@
-body {
+.main {
   display: flex;
-  justify-content: center;
-}
-
-.container {
-  width: 1080px;
+  flex-wrap: wrap;
+  align-self: center;
+  width: 70%;
 }

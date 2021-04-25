@@ -6,12 +6,12 @@ const Book = (props) => {
   
   return (
     <div className="book">
-      <span>{ book.title }</span>
-      <span>{ book.author_name }</span>
-      <span>{ book.first_publish_year }</span>
-      <span>{ book.publisher }</span>
-      <span>{ book.isbn }</span>
-      <span>{ book.coverId }</span>
+      <img className="book__cover" src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} alt={`Обложка ${book.title}`} />      
+      <div className="book-info">
+        <p className="book-info__title">{ book.title }</p>
+        <p className="book-info__author">{ book.author_name }</p>
+      </div>
+      
     </div>
   )
 }

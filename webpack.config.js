@@ -17,7 +17,8 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin({template: "./src/index.html"}),
-    new CleanWebpackPlugin
+    new CleanWebpackPlugin,
+    require('autoprefixer')
   ],
   module: {
     rules: [

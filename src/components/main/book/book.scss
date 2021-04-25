@@ -1,0 +1,37 @@
+%transition {
+ transition: .4s ease-out;
+}
+
+.book {
+  width: 180px;
+  margin: 20px 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 8%);
+  border-radius: 4px;
+  overflow: hidden;
+  @extend %transition;
+  &:hover {
+    box-shadow: 0 4px 16px 0 rgb(0 0 0 / 30%);
+    .book-info__title {
+      color: #ff0c00;
+    }
+  }
+
+  &-info {
+    padding: 15px 15px;
+    &__title {
+      @extend %transition;
+      font: bold 16px sans-serif;
+      color: #0065d9;
+    }
+    &__author {
+      font: normal 14px sans-serif;
+      color: rgba(0,0,0,.56)
+    }
+  
+  }
+  &__cover {
+    text-align: center;
+    width: 100%;
+  }
+}
