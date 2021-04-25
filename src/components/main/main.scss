@@ -1,6 +1,9 @@
 .main {
+  width: 70%;
+}
+
+.list {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
-  width: 70%;
 }
