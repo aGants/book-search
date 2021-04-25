@@ -16,8 +16,8 @@ const Main = () => {
   return(
     <div className="main">
       <div className="search">
-        <input type="text" placeholder="Введите название книги" className="search-input"/>
-        <button>Искать</button>
+        <input type="text" placeholder="Введите название книги" className="search__input"/>
+        <button className="search__button">искать</button>
       </div>
       <div className="list">
       {book.map((book, index) => 

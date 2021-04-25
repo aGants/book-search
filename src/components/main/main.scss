@@ -7,3 +7,36 @@
   flex-wrap: wrap;
   align-self: center;
 }
+
+.search {
+  margin: 50px 0;
+  text-align: center;
+  height: 43px;
+  &__input {
+    width: 70%;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    &:focus, &:active {
+      border: 2px solid #ffcc00;
+      outline: none;
+    }
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.56);
+    }
+  }
+  &__button {
+    background-color: #fbfbfb;
+    height: 100%;
+    padding: 10px;
+    border: none;
+    text-transform: uppercase;
+    font: bolder 10px sans-serif;
+    cursor: pointer;
+    &:hover {
+      color: #ff0c00;
+    }
+  }
+
+}
