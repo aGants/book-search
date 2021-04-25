@@ -19,11 +19,23 @@ const Main = () => {
         <input type="text" placeholder="Введите название книги" className="search__input"/>
         <button className="search__button">искать</button>
       </div>
-      <div className="list">
-      {book.map((book, index) => 
-        <Book key={index} book={book} />
-        )}
-      </div>
+      {
+        isFetcing === true ? (
+          <div className="list">
+            {book.map((book, index) => 
+              <Book key={index} book={book} />
+            )}
+          </div>
+        ) :
+        (
+          <div className="fetching">
+            <svg className="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+              <circle className="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+          </div>
+        )
+      }
+      
     </div>
   );
 };
