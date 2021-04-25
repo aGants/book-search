@@ -10,9 +10,11 @@ const Book = (props) => {
       <div className="book-info">
         <p className="book-info__title">{ book.title }</p>
           <p className="book-info-authors">
-            {book.author_name.map((author,index) => 
-              <span className="book-info-authors__name">{ author }</span>
-            )}
+            {book.author_name ? (
+              book.author_name.map((author, index) => 
+              <span key={ index } className="book-info-authors__name">{ author }</span>
+              )) : (<span className="book-info-authors__name">Неизвестный автор</span>)
+            }
           </p>
         
       </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import './app.scss'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom';
 import Main from './main/Main';
 
