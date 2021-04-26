@@ -3,7 +3,7 @@ import {setBook, setIsFetching} from '../../reducers/bookReducer'
 
 export const getBook = (searchTitle = "") => {
   if (searchTitle == "") {
-    searchTitle = ""
+    searchTitle = "/"
   }
   return async (dispatch) => {
     try {

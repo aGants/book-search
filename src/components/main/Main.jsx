@@ -46,7 +46,7 @@ const Main = () => {
           искать
         </button>
       </div>
-      { (searchValue.length === 0) ? (<p>здесь пока пусто</p>) :
+      { (searchValue.length === 0) ? null :
         ( isFetching ? 
           (
             <div className="fetching">
