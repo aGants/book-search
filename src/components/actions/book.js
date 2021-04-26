@@ -1,13 +1,17 @@
 import axios from 'axios';
 import {setBook, setIsFetching} from '../../reducers/bookReducer'
 
-export const getBook = (searchTitle) => {
+export const getBook = (searchTitle = "") => {
   if (searchTitle == "") {
-    searchTitle = "Fantastic Mr. Fox"
-}
+    searchTitle = ""
+  }
   return async (dispatch) => {
-    dispatch(setIsFetching(true))
-    const response = await axios.get(`https://openlibrary.org/search.json?title=${searchTitle}`)
-    dispatch(setBook(response.data))
+    try {
+      dispatch(setIsFetching(true))
+      const response = await axios.get(`https://openlibrary.org/search.json?title=${searchTitle}`)
+      dispatch(setBook(response.data))
+    } catch(e) {
+      
+    }
   }
 }
