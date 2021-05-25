@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {setBook, setIsFetching} from '../../reducers/bookReducer'
+import {setBook, setIsError, setIsFetching} from '../../reducers/bookReducer'
 
 export const getBook = (searchTitle = "") => {
   if (searchTitle == "") {
@@ -11,7 +11,11 @@ export const getBook = (searchTitle = "") => {
       const response = await axios.get(`https://openlibrary.org/search.json?title=${searchTitle}`)
       dispatch(setBook(response.data))
     } catch(e) {
-      
+      dispatch(setIsError(true))
+      dispatch(setIsFetching(false))
+      setTimeout( () => {
+        dispatch(setIsError(false))
+      }, 5000)
     }
   }
 }

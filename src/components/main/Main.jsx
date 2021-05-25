@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBook } from '../actions/book';
 import Book from "./book/Book";
+import Error from "./error/Error";
 import './main.scss'
 
 const Main = () => {
   const dispatch = useDispatch()
   const book = useSelector(state => state.book.docs)
   const isFetching = useSelector(state => state.book.isFetching)
+  const isError = useSelector(state => state.book.isError)
 
   const [searchValue, setSearchValue] = useState("")
   const [timerId, setTimerId] = useState(null);
@@ -31,6 +33,10 @@ const Main = () => {
 
   return (
     <div className="main">
+      {
+        isError && 
+        <Error />
+      }
       <div className="search">
         <input 
           value={searchValue}
