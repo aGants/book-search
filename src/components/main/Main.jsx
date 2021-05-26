@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getBook } from '../actions/book';
 import Book from "./book/Book";
 import Error from "./error/Error";
+import Fetching from "./fetching/Fetching"
 import './main.scss'
 
 const Main = () => {
@@ -34,8 +35,7 @@ const Main = () => {
   return (
     <div className="main">
       {
-        isError && 
-        <Error />
+        isError && <Error />
       }
       <div className="search">
         <input 
@@ -54,13 +54,7 @@ const Main = () => {
       </div>
       { (searchValue.length === 0) ? null :
         ( isFetching ? 
-          (
-            <div className="fetching">
-              <svg className="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                <circle className="path" fill="none" strokeWidth="6" strokeLinecap="round" cx="33" cy="33" r="30"></circle>
-              </svg>
-            </div>
-          ) :
+          ( <Fetching /> ) :
           (
             <div className="list">
               {book.map((book, index) => 
