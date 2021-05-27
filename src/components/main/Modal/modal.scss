@@ -8,10 +8,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
 
   &.active {
-    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
   }
   
   &-content {
@@ -26,6 +29,7 @@
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 4px 16px 0 rgb(0 0 0 / 40%);
+    
     @media screen and (min-width: 900px) {
       width: 500px;
       flex-wrap: nowrap;

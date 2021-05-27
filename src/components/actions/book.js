@@ -9,14 +9,13 @@ export const getBook = (searchTitle = "/") => {
     try {
       dispatch(setIsFetching(true))
       const response = await axios.get(`https://openlibrary.org/search.json?title=${searchTitle}`)
-      console.log(searchTitle)
       dispatch(setBook(response.data))
     } catch(e) {
       dispatch(setIsError(true))
       dispatch(setIsFetching(false))
       setTimeout( () => {
         dispatch(setIsError(false))
-      }, 5000)
+      }, 10000)
     }
   }
 }
