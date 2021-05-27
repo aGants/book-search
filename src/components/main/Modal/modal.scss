@@ -15,8 +15,25 @@
   }
   
   &-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 250px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 4px;
+    @media screen and (min-width: 900px) {
+      width: 500px;
+    }
+    &__title {
+      font: bold 20px sans-serif;
+      margin: 15px 0;
+    }
+    &-list {
+      margin-top: 5px;
+      &__publisher:not(:nth-child(2)):before {
+        content: ' // ';
+      }
+    }
   }
 }
