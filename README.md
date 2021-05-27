@@ -1,6 +1,6 @@
 # [Поиск книг](https://agants.github.io/book-search/)
 
-[](image.jpg)
+![](image.jpg)
 
 * Webpack
 * React + Redux
