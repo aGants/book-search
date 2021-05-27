@@ -28,33 +28,7 @@ const Book = (props) => {
             </p>
         </div>
       </a>
-      <Modal active={modalActive} setActive={setModalActive}>
-        <div>
-          {book.cover_i &&
-            <img src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`} alt={`Обложка ${book.title}`} />      
-          }
-        </div>
-        <div>
-          <p className="modal-content__title">{ book.title }</p>
-          
-          { book.first_publish_year && 
-          <p>Это издание книги было впервые опубликовано в { book.first_publish_year } году</p>}
-          { book.isbn &&  <p>ISBN: { book.isbn[0] }</p>}
-
-          { book.publisher &&
-            <p className="modal-content-list">
-              <span>Издатель: </span> 
-              { book.publisher.map((publisher, index) => 
-                <span key={ index } className="modal-content-list__publisher">{ publisher }</span>
-              )}
-            </p>
-          }
-          
-          { book.description && 
-          <p> { book.description } </p>}
-
-        </div>
-      </Modal>
+      <Modal active={modalActive} setActive={setModalActive} book={book} />
     </div>
   )
 }

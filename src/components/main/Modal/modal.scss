@@ -16,21 +16,34 @@
   
   &-content {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     width: 250px;
+    max-height: 90vh;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px 0 rgb(0 0 0 / 40%);
     @media screen and (min-width: 900px) {
       width: 500px;
+      flex-wrap: nowrap;
     }
     &__title {
       font: bold 20px sans-serif;
       margin: 15px 0;
     }
     &-list {
+      min-height: 100px;
+      max-height: 40vh;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      -ms-overflow-style: none; 
       margin-top: 5px;
+      &::-webkit-scrollbar {
+        width: 0px;
+      }
       &__publisher:not(:nth-child(2)):before {
         content: ' // ';
       }
